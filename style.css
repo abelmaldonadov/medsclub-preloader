@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.my-preloader {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(25px);
+    position: absolute;
+}
+.my-preloader .heartbeat {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.my-preloader .container {
+    height: 340px;
+    width: 340px;
+    border-radius: 50%;
+    background: white;
+    overflow: hidden;
+    animation: palpitar-container 1s alternate-reverse infinite;
+}
+.my-preloader .logo {
+    width: 150px;
+    animation: palpitar-logo 1s alternate infinite;
+}
+.my-preloader .line {
+    height: 3px;
+    width: 100vw;
+    background: #49a8d2;
+    transform: translateY(272px);
+}
+.my-preloader .img {
+    height: 100px;
+    width: 100px;
+    animation: mover-derecha 1s linear infinite; /* La animación dura 3 segundos por vuelta */
+    transform: translateY(221px);
+}
+@keyframes palpitar-logo {
+    0% {
+        transform: scale(130%) ;
+
+    }
+    100% {
+        transform: scale(90%) ;
+    }
+}
+@keyframes palpitar-container {
+    0% {
+        transform: scale(100%);
+
+    }
+    100% {
+        transform: scale(80%);
+    }
+}
+@keyframes mover-derecha {
+    0% {
+        transform: translate(-100px, 221px); /* La imagen está fuera del área visible hacia la izquierda */
+    }
+    100% {
+        transform: translate(300px, 221px); /* La imagen se mueve completamente hacia la derecha */
+    }
+}
